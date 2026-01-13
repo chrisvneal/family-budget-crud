@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CreditorTable from "./CreditorTable";
+import api from "./apis/api";
 
 export default function App() {
 	const creditorList = [
@@ -17,7 +18,21 @@ export default function App() {
 		},
 	];
 
-	const [creditors, setCreditors] = useState(creditorList);
+	const [creditors, setCreditors] = useState([]);
+
+	const fetchCreditors = async () => {
+		try {
+			const response = await api.get("/creditors");
+			// console.log(response.data);
+			setCreditors(response.data);
+		} catch (error) {
+			console.error("Error fetching creditors:", error);
+		}
+	};
+
+	useEffect(() => {
+		fetchCreditors();
+	}, []);
 
 	return (
 		<div>

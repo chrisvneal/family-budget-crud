@@ -13,7 +13,7 @@ export default function CreditorTable({ creditors }) {
 			</thead>
 			<tbody>
 				{creditors.map((creditor) => {
-					return <Creditor name={creditor.name} payDate={creditor.payDate} amountDue={creditor.amountDue} />;
+					return <Creditor key={creditor.id} name={creditor.name} payDate={creditor.payDate} amountDue={creditor.amountDue} />;
 				})}
 			</tbody>
 		</table>

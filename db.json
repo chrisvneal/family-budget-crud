@@ -1,3 +1,6 @@
 {
-    "creditors": []
+    "creditors": [{
+        "id": 1,
+        "name": "Chris"
+    }]
 }
