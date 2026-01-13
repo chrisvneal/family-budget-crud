@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Creditor({ name, payDate, amountDue }) {
+export default function CreditorRow({ name, payDate, amountDue }) {
 	return (
 		<tr>
 			<td>{name}</td>

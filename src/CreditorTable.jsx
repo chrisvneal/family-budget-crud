@@ -1,8 +1,11 @@
 import React from "react";
-import Creditor from "./Creditor";
+import CreditorRow from "./CreditorRow";
 import "../src/table.scss";
 
 export default function CreditorTable({ creditors }) {
+	const rows = creditors.map((creditor) => {
+		return <CreditorRow key={creditor.id} name={creditor.name} payDate={creditor.payDate} amountDue={creditor.amountDue} />;
+	});
 	return (
 		<table>
 			<thead>
@@ -12,11 +15,7 @@ export default function CreditorTable({ creditors }) {
 					<th>Due Date</th>
 				</tr>
 			</thead>
-			<tbody>
-				{creditors.map((creditor) => {
-					return <Creditor key={creditor.id} name={creditor.name} payDate={creditor.payDate} amountDue={creditor.amountDue} />;
-				})}
-			</tbody>
+			<tbody>{rows}</tbody>
 		</table>
 	);
 }

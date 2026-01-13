@@ -27,8 +27,8 @@ export default function App() {
 	return (
 		<div className='App'>
 			<CreditorForm onAdd={updateCreditors} />
-			<h2>Creditors</h2>
 
+			<h2>Creditors</h2>
 			<CreditorTable creditors={allCreditors} />
 		</div>
 	);
