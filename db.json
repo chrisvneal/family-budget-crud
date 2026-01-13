@@ -1,10 +1,14 @@
 {
   "creditors": [
+<<<<<<< HEAD
     {
       "id": "8fff",
       "name": "Christopher Neal",
       "amountDue": 45,
       "payDate": 12
     }
+=======
+ 
+>>>>>>> table
   ]
 }

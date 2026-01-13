@@ -4,8 +4,10 @@ import CreditorForm from "./CreditorForm";
 import api from "./apis/api";
 
 export default function App() {
+	// Set state for creditors and form inputs
 	const [creditors, setCreditors] = useState([]);
 
+	// Fetch creditors from API
 	const fetchCreditors = async () => {
 		const response = await api.get("/creditors");
 
