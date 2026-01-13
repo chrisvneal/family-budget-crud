@@ -2,9 +2,9 @@ import React from "react";
 import CreditorRow from "./CreditorRow";
 import "./styles/table.scss";
 
-export default function CreditorTable({ creditors }) {
+export default function CreditorTable({ creditors, onDelete }) {
 	const rows = creditors.map((creditor) => {
-		return <CreditorRow key={creditor.id} name={creditor.name} payDate={creditor.payDate} amountDue={creditor.amountDue} />;
+		return <CreditorRow key={creditor.id} id={creditor.id} name={creditor.name} payDate={creditor.payDate} amountDue={creditor.amountDue} removeCreditor={onDelete} />;
 	});
 	return (
 		<table>

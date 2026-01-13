@@ -23,6 +23,14 @@ export default function App() {
 		fetchCreditors();
 	}, []);
 
+	const handleDelete = async (id) => {
+		const updatedCreditors = creditors.filter((creditor) => creditor.id !== id);
+
+		await api.delete(`/creditors/${id}`);
+
+		setCreditors(updatedCreditors);
+	};
+
 	const allCreditors = creditors;
 
 	return (
@@ -30,7 +38,7 @@ export default function App() {
 			<CreditorForm onAdd={updateCreditors} />
 
 			<h2>Creditors</h2>
-			<CreditorTable creditors={allCreditors} />
+			<CreditorTable creditors={allCreditors} onDelete={handleDelete} />
 		</div>
 	);
 }
