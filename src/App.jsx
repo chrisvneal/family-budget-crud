@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Creditor from "./Creditor";
+import CreditorTable from "./CreditorTable";
 
 export default function App() {
 	const creditor = {
@@ -21,9 +21,8 @@ export default function App() {
 	return (
 		<div>
 			<h2>Creditors</h2>
-			{creditors.map((creditor) => {
-				return <Creditor key={creditor.id} name={creditor.name} />;
-			})}
+
+			<CreditorTable creditors={creditors} />
 		</div>
 	);
 }

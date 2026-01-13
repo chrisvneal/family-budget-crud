@@ -1,9 +1,11 @@
 import React from "react";
 
-export default function Creditor({ name }) {
+export default function Creditor({ name, payDate, amountDue }) {
 	return (
-		<div>
-			<p>{name}</p>
-		</div>
+		<tr>
+			<td>{name}</td>
+			<td>${amountDue}</td>
+			<td>{payDate}</td>
+		</tr>
 	);
 }
