@@ -31,12 +31,21 @@ export default function CreditorForm({ onAdd }) {
 	return (
 		<form className='creditorform' onSubmit={handleSubmit}>
 			<h2>Add Creditor</h2>
-			<label>Name</label>
-			<input type='text' name='name' onChange={handleChange} value={form.name} />
-			<label>Amount Due</label>
-			<input type='number' name='amountDue' onChange={handleChange} value={form.amountDue} />
-			<label>Pay Date</label>
-			<input type='number' name='payDate' onChange={handleChange} value={form.payDate} />
+			<div>
+				<label>Name</label>
+				<input type='text' name='name' onChange={handleChange} value={form.name} />
+			</div>
+
+			<div>
+				<label>Amount Due</label>
+				<input type='number' name='amountDue' onChange={handleChange} value={form.amountDue} />
+			</div>
+
+			<div>
+				<label>Pay Date</label>
+				<input type='number' name='payDate' onChange={handleChange} value={form.payDate} />
+			</div>
+
 			<button type='submit'>Add Creditor</button>
 		</form>
 	);
