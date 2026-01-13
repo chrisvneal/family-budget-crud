@@ -2,21 +2,22 @@ import React, { useState } from "react";
 import CreditorTable from "./CreditorTable";
 
 export default function App() {
-	const creditor = {
-		id: 1,
-		name: "Household Bank",
-		payDate: 15,
-		amountDue: 30.0,
-	};
+	const creditorList = [
+		{
+			id: 1,
+			name: "Household Bank",
+			payDate: 15,
+			amountDue: 30.0,
+		},
+		{
+			id: 2,
+			name: "Capital One",
+			payDate: 15,
+			amountDue: 30.0,
+		},
+	];
 
-	const creditor2 = {
-		id: 2,
-		name: "Capital One",
-		payDate: 15,
-		amountDue: 30.0,
-	};
-
-	const [creditors, setCreditors] = useState([creditor, creditor2]);
+	const [creditors, setCreditors] = useState(creditorList);
 
 	return (
 		<div>
