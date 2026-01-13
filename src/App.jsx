@@ -7,6 +7,8 @@ export default function App() {
 
 	const fetchCreditors = async () => {
 		const response = await api.get("/creditors");
+		// console.log("Fetched creditors:");
+		// console.log(Array.isArray(response.data));
 
 		setCreditors(response.data);
 	};
@@ -16,7 +18,7 @@ export default function App() {
 	}, []);
 
 	return (
-		<div>
+		<div className='App'>
 			<h2>Creditors</h2>
 
 			<CreditorTable creditors={creditors} />
