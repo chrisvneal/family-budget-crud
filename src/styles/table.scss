@@ -1,12 +1,16 @@
 table {
-    border: 1px solid black;
   border-collapse: collapse;
   width: 50%;
-
 }
 
-
+/* All cells */
 td, th {
   border: 1px solid #555;
   padding: 8px;
+}
+
+/* Remove all borders on last column */
+td:last-child,
+th:last-child {
+  border: none;
 }

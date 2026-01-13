@@ -1,16 +1,10 @@
 {
   "creditors": [
     {
-      "id": "780a",
-      "name": "Capital One",
-      "amountDue": 54.67,
-      "payDate": 23
-    },
-    {
-      "id": "7d47",
-      "name": "Chris Neal",
-      "amountDue": 23,
-      "payDate": 12
+      "id": "5f1a",
+      "name": "",
+      "amountDue": 0,
+      "payDate": 0
     }
   ]
 }
