@@ -15,8 +15,22 @@ export default function App() {
 		fetchCreditors();
 	}, []);
 
+	const handleSubmit = (e) => {
+		e.preventDefault();
+	};
+
 	return (
 		<div className='App'>
+			<form onSubmit={handleSubmit}>
+				<h2>Add Creditor</h2>
+				<label>Name</label>
+				<input type='text' name='name' />
+				<label>Amount Due</label>
+				<input type='number' name='amountDue' />
+				<label>Pay Date</label>
+				<input type='number' name='payDate' />
+				<button type='submit'>Add Creditor</button>
+			</form>
 			<h2>Creditors</h2>
 
 			<CreditorTable creditors={creditors} />
