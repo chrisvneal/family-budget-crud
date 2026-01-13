@@ -1,5 +1,6 @@
 import React from "react";
 import Creditor from "./Creditor";
+import "../src/table.scss";
 
 export default function CreditorTable({ creditors }) {
 	return (
