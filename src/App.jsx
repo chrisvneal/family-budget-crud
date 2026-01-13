@@ -9,16 +9,21 @@ export default function App() {
 		amountDue: 30.0,
 	};
 
-	const [creditors, setCreditors] = useState([creditor]);
+	const creditor2 = {
+		id: 2,
+		name: "Capital One",
+		payDate: 15,
+		amountDue: 30.0,
+	};
 
-	const renderedCreditors = creditors.map((creditor) => {
-		return <Creditor name={creditor.name} />;
-	});
+	const [creditors, setCreditors] = useState([creditor, creditor2]);
 
 	return (
 		<div>
 			<h2>Creditors</h2>
-			{renderedCreditors}
+			{creditors.map((creditor) => {
+				return <Creditor key={creditor.id} name={creditor.name} />;
+			})}
 		</div>
 	);
 }
