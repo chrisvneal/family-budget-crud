@@ -1,8 +1,4 @@
 {
-    "creditors": [{
-        "id": 1,
-        "name": "Chris",
-        "amountDue": 30.00,
-        "payDate": 20
-    }]
+  "creditors": [
+     ]
 }
