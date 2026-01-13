@@ -14,20 +14,22 @@ export default function App() {
 		setCreditors(response.data);
 	};
 
+	const updateCreditors = (newCreditor) => {
+		setCreditors((prev) => [...prev, newCreditor]);
+	};
+
 	useEffect(() => {
 		fetchCreditors();
 	}, []);
 
-	const addCreditor = (newCreditor) => {
-		setCreditors((prev) => [...prev, newCreditor]);
-	};
+	const allCreditors = creditors;
 
 	return (
 		<div className='App'>
-			<CreditorForm onAdd={addCreditor} />
+			<CreditorForm onAdd={updateCreditors} />
 			<h2>Creditors</h2>
 
-			<CreditorTable creditors={creditors} />
+			<CreditorTable creditors={allCreditors} />
 		</div>
 	);
 }

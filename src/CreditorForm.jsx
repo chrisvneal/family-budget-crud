@@ -11,12 +11,14 @@ export default function CreditorForm({ onAdd }) {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
+		// Post new creditor to creditor API (mock server)
 		const res = await api.post("/creditors", {
 			name: form.name,
 			amountDue: Number(form.amountDue),
 			payDate: Number(form.payDate),
 		});
 
+		// update creditor state in App.jsx
 		onAdd(res.data);
 
 		setForm({ name: "", amountDue: "", payDate: "" });
