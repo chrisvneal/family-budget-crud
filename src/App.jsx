@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Creditor from "./Creditor";
 
 export default function App() {
 	const creditor = {
@@ -10,9 +11,14 @@ export default function App() {
 
 	const [creditors, setCreditors] = useState([creditor]);
 
+	const renderedCreditors = creditors.map((creditor) => {
+		return <Creditor name={creditor.name} />;
+	});
+
 	return (
 		<div>
 			<h2>Creditors</h2>
+			{renderedCreditors}
 		</div>
 	);
 }
