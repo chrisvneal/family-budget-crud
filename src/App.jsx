@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CreditorTable from "./CreditorTable";
 import CreditorForm from "./CreditorForm";
 import api from "./apis/api";
+import "./styles/App.scss";
 
 export default function App() {
 	// Set state for creditors and form inputs

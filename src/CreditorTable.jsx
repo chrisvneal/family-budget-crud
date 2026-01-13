@@ -1,6 +1,6 @@
 import React from "react";
 import CreditorRow from "./CreditorRow";
-import "../src/table.scss";
+import "./styles/table.scss";
 
 export default function CreditorTable({ creditors }) {
 	const rows = creditors.map((creditor) => {
@@ -13,6 +13,7 @@ export default function CreditorTable({ creditors }) {
 					<th>Name</th>
 					<th>Amount</th>
 					<th>Due Date</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>{rows}</tbody>

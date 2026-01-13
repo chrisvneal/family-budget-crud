@@ -6,6 +6,9 @@ export default function CreditorRow({ name, payDate, amountDue }) {
 			<td>{name}</td>
 			<td>${amountDue}</td>
 			<td>{payDate}</td>
+			<td>
+				<button>Delete</button>
+			</td>
 		</tr>
 	);
 }

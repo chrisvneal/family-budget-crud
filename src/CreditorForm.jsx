@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import api from "./apis/api";
+import "./styles/form.scss";
 
 export default function CreditorForm({ onAdd }) {
 	const [form, setForm] = useState({
@@ -29,7 +30,7 @@ export default function CreditorForm({ onAdd }) {
 	};
 
 	return (
-		<form className='creditorform' onSubmit={handleSubmit}>
+		<form className='creditor-form' onSubmit={handleSubmit}>
 			<h2>Add Creditor</h2>
 			<div>
 				<label>Name</label>
