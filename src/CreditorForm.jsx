@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import api from "./apis/api";
 import "./styles/form.scss";
+import CreditorsContext from "./contexts/CreditorsContext";
 
 export default function CreditorForm({ onAdd }) {
+	const { updateCreditors } = useContext(CreditorsContext);
 	const [form, setForm] = useState({
 		name: "",
 		amountDue: "",
@@ -20,7 +22,7 @@ export default function CreditorForm({ onAdd }) {
 		});
 
 		// update creditor state in App.jsx
-		onAdd(res.data);
+		updateCreditors(res.data);
 
 		setForm({ name: "", amountDue: "", payDate: "" });
 	};

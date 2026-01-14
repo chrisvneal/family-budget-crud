@@ -1,10 +1,3 @@
 {
-  "creditors": [
-    {
-      "id": "5f1a",
-      "name": "",
-      "amountDue": 0,
-      "payDate": 0
-    }
-  ]
+  "creditors": []
 }
