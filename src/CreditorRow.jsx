@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import CreditorsContext from "./contexts/CreditorsContext";
+import React from "react";
+import useCreditorsContext from "./hooks/use-creditors-context";
 
 export default function CreditorRow({ id, name, payDate, amountDue }) {
-	const { handleDelete } = useContext(CreditorsContext);
+	const { handleDelete } = useCreditorsContext();
 
 	return (
 		<tr>

@@ -1,10 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import api from "./apis/api";
 import "./styles/form.scss";
-import CreditorsContext from "./contexts/CreditorsContext";
+import useCreditorsContext from "./hooks/use-creditors-context";
 
 export default function CreditorForm() {
-	const { updateCreditors } = useContext(CreditorsContext);
+	const { updateCreditors } = useCreditorsContext();
 	const [form, setForm] = useState({
 		name: "",
 		amountDue: "",

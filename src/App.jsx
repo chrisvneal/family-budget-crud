@@ -1,12 +1,12 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import CreditorTable from "./CreditorTable";
 import CreditorForm from "./CreditorForm";
-import CreditorsContext from "./contexts/CreditorsContext";
+import useCreditorsContext from "./hooks/use-creditors-context";
 
 import "./styles/App.scss";
 
 export default function App() {
-	const { creditors, fetchCreditors, handleDelete } = useContext(CreditorsContext);
+	const { fetchCreditors } = useCreditorsContext();
 	useEffect(() => {
 		fetchCreditors();
 	}, []);
@@ -16,7 +16,7 @@ export default function App() {
 			<CreditorForm />
 
 			<h2>Creditors</h2>
-			<CreditorTable creditors={creditors} onDelete={handleDelete} />
+			<CreditorTable />
 		</div>
 	);
 }
