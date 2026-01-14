@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import api from "./apis/api";
 import "./styles/form.scss";
+import api from "./apis/api";
 import useCreditorsContext from "./hooks/use-creditors-context";
 
 export default function CreditorForm() {
+	// State variables
 	const { updateCreditors } = useCreditorsContext();
 	const [form, setForm] = useState({
 		name: "",
@@ -11,23 +12,28 @@ export default function CreditorForm() {
 		payDate: "",
 	});
 
+	// When the form submits...
 	const handleSubmit = async (e) => {
+		// ...prevent default behavior...
 		e.preventDefault();
 
-		// Post new creditor to creditor API (mock server)
+		// ...post new creditor to creditor API (mock server)
 		const res = await api.post("/creditors", {
 			name: form.name,
 			amountDue: Number(form.amountDue),
 			payDate: Number(form.payDate),
 		});
 
-		// update creditor state in App.jsx
+		// ...update creditor state in App.jsx
 		updateCreditors(res.data);
 
+		// ...clear form after submission
 		setForm({ name: "", amountDue: "", payDate: "" });
 	};
 
+	// When an input changes...
 	const handleChange = (e) => {
+		// ...update form state
 		setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 	};
 

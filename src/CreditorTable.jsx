@@ -5,7 +5,8 @@ import useCreditorsContext from "./hooks/use-creditors-context";
 
 export default function CreditorTable() {
 	const { creditors } = useCreditorsContext();
-	const rows = creditors.map((creditor) => {
+	const creditorRows = creditors.map((creditor) => {
+		// Populate CreditorRow components for each creditor
 		return <CreditorRow key={creditor.id} id={creditor.id} name={creditor.name} payDate={creditor.payDate} amountDue={creditor.amountDue} />;
 	});
 	return (
@@ -18,7 +19,7 @@ export default function CreditorTable() {
 					<th></th>
 				</tr>
 			</thead>
-			<tbody>{rows}</tbody>
+			<tbody>{creditorRows}</tbody>
 		</table>
 	);
 }
