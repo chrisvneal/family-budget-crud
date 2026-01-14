@@ -19,11 +19,9 @@ function CreditorsProvider({ children }) {
 	};
 
 	const handleDelete = async (id) => {
-		const updatedCreditors = creditors.filter((creditor) => creditor.id !== id);
-
 		await api.delete(`/creditors/${id}`);
 
-		setCreditors(updatedCreditors);
+		setCreditors((prev) => prev.filter((c) => c.id !== id));
 	};
 
 	const creditorInfo = {

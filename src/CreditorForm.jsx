@@ -3,7 +3,7 @@ import api from "./apis/api";
 import "./styles/form.scss";
 import CreditorsContext from "./contexts/CreditorsContext";
 
-export default function CreditorForm({ onAdd }) {
+export default function CreditorForm() {
 	const { updateCreditors } = useContext(CreditorsContext);
 	const [form, setForm] = useState({
 		name: "",

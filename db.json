@@ -1,3 +1,10 @@
 {
-  "creditors": []
+  "creditors": [
+    {
+      "id": "bbd6",
+      "name": "121",
+      "amountDue": 12,
+      "payDate": 12
+    }
+  ]
 }
